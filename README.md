@@ -1,1 +1,3 @@
-# vanilla-js-caculator
+# Vanilla JavaScript Calculator
+
+![Screenshoot](media/screenshoot.png)
