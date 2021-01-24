@@ -1,11 +1,11 @@
 // DOM constants
-const nums = document.querySelectorAll('[data-number]');
-const signs = document.querySelectorAll('[data-sign]');
-const equals = document.querySelector('[data-equals]');
+const NUMS = document.querySelectorAll('[data-number]');
+const SIGNS = document.querySelectorAll('[data-sign]');
+const EQUALS = document.querySelector('[data-equals]');
 const DEL = document.querySelector('[data-DEL]');
 const AC = document.querySelector('[data-AC]');
-const previousElement = document.querySelector('[data-previous-output]');
-const currentElement = document.querySelector('[data-current-output]');
+const PREVIOUS_ELEMENT = document.querySelector('[data-previous-output]');
+const CURRENT_ELEMENT = document.querySelector('[data-current-output]');
 
 class Calculator {
     // constructor function
@@ -85,39 +85,39 @@ class Calculator {
 }
 
 // create a calculator abject
-const calculator = new Calculator(previousElement, currentElement);
+const calculator = new Calculator(PREVIOUS_ELEMENT, CURRENT_ELEMENT);
 
 // button activities
-nums.forEach(button => {
+NUMS.forEach(button => {
     button.addEventListener('click', () => {
         calculator.appendNumber(button.innerText);
         calculator.updateOutput();
     });
 });
 
-signs.forEach(button => {
+SIGNS.forEach(button => {
     button.addEventListener('click', () => {
         calculator.chooseSign(button.innerText);
         calculator.updateOutput();
     });
 });
 
-equals.addEventListener('click', button => {
+EQUALS.addEventListener('click', () => {
     calculator.calculate();
     calculator.updateOutput();
 });
 
-AC.addEventListener('click', button => {
+AC.addEventListener('click', () => {
     calculator.allClear();
     calculator.updateOutput();
 });
 
-DEL.addEventListener('click', button => {
+DEL.addEventListener('click', () => {
     calculator.delete();
     calculator.updateOutput();
 });
 
-document.addEventListener('keyup', control);
+document.addEventListener('keydown', control);
 
 // activate keyboard
 function control(e) {
@@ -127,7 +127,7 @@ function control(e) {
     } else if (e.keyCode === 46) {
         calculator.allClear();
         calculator.updateOutput();
-    } else if (e.keyCode == 13) {
+    } else if (e.keyCode === 13) {
         calculator.calculate();
         calculator.updateOutput();
     } else if (e.keyCode === 48) {
@@ -217,7 +217,5 @@ function control(e) {
     } else if (e.keyCode === 188) {
         calculator.appendNumber(".");
         calculator.updateOutput();
-    } else {
-        alert("Invalid Input!")
     }
 }
