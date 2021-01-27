@@ -29,16 +29,21 @@ class Calculator {
 
     // number concatenation
     appendNumber(num) {
-        if (num === '.' && this.currentNum.includes('.')) return;
+        if (num === '.' && this.currentNum.toString().includes('.')) return;
         this.currentNum = this.currentNum.toString() + num.toString();
     }
 
     // choose operation
     chooseSign(sign) {
-        if (this.currentNum === '') return;
-        if (this.previousNum !== '') {
-            this.calculate();
+        if (this.currentNum === '') {
+            if (this.previousNum === '') return;
+            else {
+                this.sign = sign;
+                return;
+            }
         }
+        else if (this.currentNum.toString().includes(".") && this.currentNum.length === 1) return ;
+        else if (this.previousNum !== '') this.calculate();
 
         this.sign = sign;
         this.previousNum = this.currentNum;
