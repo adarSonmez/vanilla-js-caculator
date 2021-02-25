@@ -41,8 +41,7 @@ class Calculator {
                 this.sign = sign;
                 return;
             }
-        }
-        else if (this.currentNum.toString().includes(".") && this.currentNum.length === 1) return ;
+        } else if (this.currentNum.toString().includes(".") && this.currentNum.length === 1) return;
         else if (this.previousNum !== '') this.calculate();
 
         this.sign = sign;

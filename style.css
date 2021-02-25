@@ -11,11 +11,13 @@ body {
 }
 
 .container {
+    margin: auto;
+    max-width: 377px;
     display: grid;
     justify-content: center;
     align-content: center;
     min-height: 100vh;
-    grid-template-columns: repeat(4, 99px);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: minmax(125px, auto) repeat(5, 99px);
 }
 
