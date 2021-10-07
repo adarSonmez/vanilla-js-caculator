@@ -1,74 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
+
+@font-face {
+    font-family: "DS-Digital";
+    src: url("fonts/DS-DIGIB.TTF");
+    font-style: normal;
+}
+
 * {
     box-sizing: border-box;
-    font-weight: normal;
-    font-family: sans-serif;
 }
 
-body {
+.register {
+    margin-top: 10vh;
+    height: auto;
+    background-color: rgb(249, 203, 255);
+    color: #30002c;
+    text-align: center;
+    width: 400px;
+    padding: 0 30px 20px;
+    font-family: "Courgette", cursive;
+}
+
+.register input {
+    border-radius: 0;
+    padding-left: 7px;
+}
+
+.register td {
+    padding: 2px 7px;
+}
+
+.register input[type="submit"] {
+    border-radius: 5px;
+    background-color: #73ffff;
+    color: #1d1a1a;
+    margin-top: 14px;
+    width: 80px;
     padding: 0;
-    margin: 0;
-    background: linear-gradient(to right, #67f, #eee);
 }
 
-.container {
+.register input[type="reset"] {
+    border-radius: 5px;
+    background-color: #f07bff;
+    color: #1d1a1a;
+    margin-top: 14px;
+    width: 80px;
+    padding: 0;
+}
+
+.register {
+    width: 500px;
+}
+
+.interests div {
+    width: 33%;
+}
+
+@media screen and (max-width: 530px) {
+    .register {
+        width: 90%;
+    }
+
+    .interests div {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .register {
+        width: 90%;
+    }
+}
+
+.fa-info {
+    font-size: 15px;
+    color: rgb(255, 0, 0);
+    margin-right: 10px;
+    cursor: pointer;
+    display: none;
+}
+
+/* Calculator */
+
+.calculator-body {
+    background-color: rgb(255, 255, 255);
+    font-family: "ds-digital";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.calculator-div {
     margin: auto;
-    max-width: 377px;
+    width: 342px;
     display: grid;
     justify-content: center;
     align-content: center;
-    min-height: 100vh;
+    min-height: 620px;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: minmax(125px, auto) repeat(5, 99px);
+    grid-template-rows: minmax(138px, auto) repeat(5, 80px);
+    background-color: rgb(158, 158, 158);
+    padding: 10px 15px;
+    border-radius: 30px;
+    box-shadow: inset 0 0 13px rgb(58, 54, 54);
+    padding: 30px 20px 0;
 }
 
-.container > a {
+.calculator-div a {
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    font-size: 35px;
-    border: 1px solid white;
+    font-size: 32px;
     outline: none;
-    background-color: rgba(140, 244, 244, 0.88);
     color: #423;
     user-select: none;
+    text-decoration: none;
+    margin: 3px;
+    border-radius: 22%;
+    background-color: rgb(22, 77, 126);
+    color: rgb(238, 238, 238);
+    border: 1px solid rgb(77, 77, 80);
+    box-shadow: inset 0 0 15px rgba(59, 56, 56, 0.5);
 }
 
-.container > a:hover {
-    background-color: #fff;
+.calculator-div > a:hover {
+    background-color: rgb(13, 49, 80);
 }
 
-a[data-DEL] {
-    background-color: rgba(255, 99, 99, 0.99);
-}
-
-a[data-AC] {
-    background-color: rgb(67, 255, 85);
-}
-
-a[data-sign] {
-    background-color: rgba(149, 169, 169, 0.99);
-}
-
-a[data-equals] {
-    background-color: #3662ff;
-}
-
-a[data-zero] {
-    background-color: rgb(238, 223, 51);
-}
-
-a[data-dot] {
-    background-color: #fb3cff;
-}
-
-.span-two {
+.equals {
     grid-column: span 2;
 }
 
-.display {
+.display-the-result {
     grid-column: 1 / -1;
-    background-color: rgba(40, 40, 40, .89);
+    background-color: rgba(29, 29, 29, 0.89);
     display: flex;
     align-items: flex-end;
     justify-content: space-around;
@@ -76,15 +144,19 @@ a[data-dot] {
     padding: 9px;
     word-wrap: break-word; /* important */
     word-break: break-all;
-    text-shadow: 0 0 12px rgba(255, 255, 180, .72);
+    text-shadow: 0 0 12px rgba(255, 255, 180, 0.72);
+    border-radius: 15%;
+    margin: 3px;
+    margin-bottom: 15px;
+    box-shadow: inset 0px 0px 8px 4px rgba(255, 255, 255, 0.342);
 }
 
-.display .previous-output {
-    color: rgba(255, 255, 255, .8);
+.display-the-result .previous-output {
+    color: rgba(255, 255, 255, 0.8);
     font-size: 1.5rem;
 }
 
-.display .current-output {
+.display-the-result .current-output {
     color: white;
     font-size: 2.6rem;
 }

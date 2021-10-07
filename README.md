@@ -2,4 +2,4 @@
 
 [**DEMO HERE!**](https://adarsonmez.github.io/vanilla-js-caculator/)
 
-![Screenshoot](media/screenshoot.png)
+![Screenshoot](media/calculator.png)
