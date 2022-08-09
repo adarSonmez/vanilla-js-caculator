@@ -7,7 +7,6 @@ const urlsToCache = [
   '/android-chrome-512x512.png',
   '/apple-touch-icon.png',
   '/favicon.ico',
-  '/manifest.json',
   '/maskable_icon_x192.png',
 ]
 
